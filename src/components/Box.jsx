@@ -9,8 +9,8 @@ const CameraController = () => {
     () => {
       const controls = new OrbitControls(camera, gl.domElement);
 
-      controls.minDistance = 3;
-      controls.maxDistance = 20;
+      controls.minDistance = 1;
+      controls.maxDistance = 50;
       return () => {
         controls.dispose();
       };
@@ -22,7 +22,7 @@ const CameraController = () => {
 
 const Box = () => {
   return (
-    <div id="canvas-container">
+    <div id="canvas-container" class="box-container">
       <Canvas>  
         <CameraController />
         <ambientLight intensity={0.1} />
