@@ -8,9 +8,9 @@ const CameraController = () => {
   useEffect(
     () => {
       const controls = new OrbitControls(camera, gl.domElement);
-      camera.position.set( 0, 0, 20 );
+      camera.position.set( 0, 0, 40 );
       controls.update();
-      controls.minDistance = 20;
+      controls.minDistance = 0;
       controls.maxDistance = 100;
       return () => {
         controls.dispose();
@@ -25,11 +25,10 @@ const Box = () => {
   return (
     <div id="canvas-container" class="box-container">
       <Canvas>  
-        <ambientLight intensity={0.1} />
-        <directionalLight color="royalblue" position={[0, 0, 5]} />
+        <ambientLight intensity={1} />
           <mesh>
-            <cylinderGeometry args={[5, 5, 10, 64]} />
-            <meshStandardMaterial />
+            <cylinderGeometry args={[15, 15, 10, 64]} />
+            <meshStandardMaterial color="lightpink" />
           </mesh>
           <CameraController />
       </Canvas>
